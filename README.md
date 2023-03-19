@@ -10,7 +10,7 @@ Explain the problem statement
 
 ## Neural Network Model
 
-Include the neural network model diagram.
+![187114741-50011779-d558-46b0-b66e-c290d9fca8c0](https://user-images.githubusercontent.com/94219582/226164790-c96d8074-ba9a-4511-b86a-d69e6b61dc5d.png)
 
 ## DESIGN STEPS
 
@@ -41,7 +41,6 @@ Plot the performance plot
 ### STEP 7:
 
 Evaluate the model with the testing data.
-![187114741-50011779-d558-46b0-b66e-c290d9fca8c0](https://user-images.githubusercontent.com/94219582/226164790-c96d8074-ba9a-4511-b86a-d69e6b61dc5d.png)
 
 ## PROGRAM
 

@@ -94,36 +94,42 @@ X_train,X_test,y_train,y_test= train_test_split(X,y,test_size = 0.4, random_stat
 Scaler = MinMaxScaler()
 Scaler.fit(X_train)
 X_train1 = Scaler.transform(X_train)
-ai = Sequential([Dense(5 , activation = 'relu') ,Dense(10,activation = 'relu'), Dense(1)])
-ai.compile(optimizer = 'rmsprop' , loss = 'mse')
-ai.fit(X_train1 , y_train,epochs = 1900)
+ai_brain = Sequential([
+    Dense(8,activation='relu'),
+    Dense(10,activation='relu'),
+    Dense(1)
+])
+ai_brain.compile(optimizer = 'rmsprop' , loss = 'mse')
+ai_brain.fit(X_train1 , y_train,epochs = 2005)
 
-loss_df = pd.DataFrame(ai.history.history)
+loss_df = pd.DataFrame(ai_brain.history.history)
 loss_df.plot()
 
 X_test1 =Scaler.transform(X_test)
-ai.evaluate(X_test1,y_test)
+ai_brain.evaluate(X_test1,y_test)
 X_n1=[[4]]
 X_n1_1=Scaler.transform(X_n1)
-ai.predict(X_n1_1)
+ai_brain.predict(X_n1_1)
 ```
 
 ## Dataset Information
 
-Include screenshot of the dataset
+![image](https://user-images.githubusercontent.com/94219582/226168229-6a5244f9-42f2-4592-acfa-78a9e3bbeec0.png)
 
 ## OUTPUT
 
 ### Training Loss Vs Iteration Plot
 
-Include your plot here
+![image](https://user-images.githubusercontent.com/94219582/226168464-67a8912f-4784-42b5-935f-b66be1dd4f05.png)
 
 ### Test Data Root Mean Squared Error
 
-Find the test data root mean squared error
+![image](https://user-images.githubusercontent.com/94219582/226168511-634fcabb-cad9-4161-bb33-b07d9e7eb623.png)
+![image](https://user-images.githubusercontent.com/94219582/226168536-da17fe3c-fa77-402e-af29-716efc23c3ed.png)
 
 ### New Sample Data Prediction
 
-Include your sample input and output here
+![image](https://user-images.githubusercontent.com/94219582/226168557-30aca09d-4b93-41f4-9d30-083927da89e9.png)
 
 ## RESULT
+Thus a neural network regression model for the given dataset is written and executed successfully

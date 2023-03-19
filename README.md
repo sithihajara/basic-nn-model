@@ -73,7 +73,7 @@ gc = gspread.authorize(creds)
 
 ### Open the Google Sheet and convert into DataFrame :
 
-worksheet = gc.open('sheet_for_DL').sheet1
+worksheet = gc.open('My Dataset').sheet1
 rows = worksheet.get_all_values()
 df = pd.DataFrame(rows[1:], columns = rows[0])
 
@@ -83,16 +83,18 @@ df = df.astype({'Output':'float'})
 
 df
 
-X = df[['Input']].values
-y = df[['Output']].values
+x=dataset1[['INPUT']].values
+y=dataset1[['OUTPUT']].values
 
-X
+x
 y
 
-X_train,X_test,y_train,y_test= train_test_split(X,y,test_size = 0.4, random_state =35)
+x_train,x_test,y_train,y_test= train_test_split(x,y,test_size = 0.4, random_state =35)
 Scaler = MinMaxScaler()
-Scaler.fit(X_train)
-X_train1 = Scaler.transform(X_train)
+Scaler.fit(x_train)
+X_train1 = Scaler.transform(x_train)
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 ai_brain = Sequential([
     Dense(8,activation='relu'),
     Dense(10,activation='relu'),
